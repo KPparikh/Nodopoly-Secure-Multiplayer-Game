@@ -1,0 +1,42 @@
+extends base
+
+style.
+  h1 {
+    font-size: 19px;
+    color: #668cff;
+  }
+  span {
+    font-size: 15px;
+    color: #668cff;
+  }
+
+
+block body
+  link(href='/css/style.css', rel='stylesheet')
+  body.bkimg
+  h1 Implementing Secure Software "Login"
+  h2 Please Login here.
+
+  .errorDiv
+    if error
+      p!= error[0].msg
+
+
+  //if error
+    p.err #{error}
+  //div(style='background-image:url(' + require("./img.jpg") + ')')
+
+  form(method="post" autocomplete="off")
+    span Email**:
+    input(type="email", name="email", required=true)
+    br
+    br
+
+    span Password**:
+    input(type="password", name="password", required=true)
+    br
+    br
+
+    input(type="submit")
+
+    

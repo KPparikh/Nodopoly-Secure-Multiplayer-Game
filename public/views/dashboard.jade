@@ -1,0 +1,70 @@
+extends base
+doctype
+html( lang="en" )
+  head
+    title Baking Bootstrap Snippets with Jade
+    meta( charset='utf-8' )
+    meta( http-equiv='X-UA-Compatible', content='IE=edge' )
+    meta( name='viewport', content='width=device-width, initial-scale=1.0' )
+    meta( name='description', content='Baking Bootstrap Snippets with Jade' )
+    //- Bootswatch Theme
+    link(href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/flatly/bootstrap.min.css", rel="stylesheet")
+
+  body(style="padding-bottom:10rem;")
+    .container
+
+    script( src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js' )
+    script( src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js' )
+
+
+
+block body
+  h1 Dashboard
+  p.
+    <a id="gPlayNow" href="#">Play</a>&nbsp;&nbsp;&nbsp;&nbsp;<a id= "gHistory" href="#">Game History</a>&nbsp;&nbsp;&nbsp;&nbsp;<a id= "gStats" href="#">Standings</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/logout">Logout</a>
+  
+  h2 Hello, #{name}  
+  p(hidden)#hName #{name}
+  p(hidden)#hEmail #{email}
+  
+
+      
+  #content
+    .options 
+      button#cRoomBtn Create Game
+      button#lRoomBtn Join Game
+      button#rGameBtn Resume Game
+  
+  p(hidden).waitMsg
+    | Wait for second Player to join.
+  
+  p(hidden).joinMsg
+    | Select a Game Room to join.
+  
+  #roomList
+    .availList
+      button(hidden)#jRoomBtn Join
+
+  #countDown.numCircle(hidden) 
+  
+  #qOne.toast
+  
+  #FieldAns(hidden)
+    .FAns
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      #info.toast
+      input#ansInput.ans
+      <br/>
+      button#sendAnsBtn Submit
+
+  #gSum-table.gs-table
+
+  #stats-table.s-table
+
+  #gHistory-table.g-table
+    
+      

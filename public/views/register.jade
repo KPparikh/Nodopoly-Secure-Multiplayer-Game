@@ -1,0 +1,40 @@
+extends base
+
+block body
+  //link(href='/css/style.css', rel='stylesheet')
+    //body.bkimg
+
+  h1 Create an Account
+
+  
+    
+  .errorDiv
+    if error  
+      for err in error
+        p!= err.msg
+
+
+  
+  #mainForm.frm
+    form(method="post" autocomplete="off")
+      span First Name**:
+      input(type="text", name="name", required=true)
+      br
+      br
+
+      span Email**
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
+      input(type="email", name="email", required=true)
+      br
+      br
+
+      span Password**
+      &nbsp;&nbsp;&nbsp;:
+      input(type="password", name="password", required=true)
+      br
+      br
+      input(type="submit")
+
+      br
+      br
+      span **fields  are mandatory
